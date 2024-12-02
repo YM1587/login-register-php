@@ -25,7 +25,7 @@
             $username = $_POST["username"];
             $email = $_POST["email"];
             $phone_number = $_POST["phone_number"];
-            $pword = $_POST["password"];
+            $pword = md5($_POST["password"]);
             $confirm_password = $_POST["confirm_password"];
 
             $passwordHash = password_hash($pword, PASSWORD_DEFAULT);
@@ -50,10 +50,10 @@
                 }
             }else{
                 include("database.php");
-                $sql = "INSERT INTO `users`(`id`, `full_name`, `username`, `email`, `phone_number`, `password`) VALUES ('','$fullname','$username','$email','$phone_number','$password')";
+                $sql = "INSERT INTO `users`(`id`, `full_name`, `username`, `email`, `phone_number`, `password`) VALUES ('','$fullname','$username','$email','$phone_number','$pword')";
 
                 if($conn -> query($sql)){
-                    echo "Records inserted successfully";
+                    echo "You have registered successfully!";
                 }
                 /*
                 $stmt = mysqli_stmt_init($conn);
@@ -67,11 +67,11 @@
                 }
 
                     
-            
-
             }
-
         }
+        
+
+    
         ?>
         <form action="registration.php" method="post">
             <h1>Registration</h1>
