@@ -65,7 +65,6 @@
                 else {
                     die("Something went wrong");
                 }
-
                     
             }
         }
