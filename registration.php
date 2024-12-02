@@ -31,7 +31,7 @@
             $passwordHash = password_hash($pword, PASSWORD_DEFAULT);
             $errors = array();
             
-            if(empty($fullname)OR empty($username)OR empty($email)OR empty($phone_number)OR empty($password)OR empty ($confirm_password)){
+            if(empty($fullname) && empty($username) && empty($email) && empty($phone_number) && empty($password) && empty ($confirm_password)){
                 array_push($errors,"All fields required!");
             }
             if (!filter_var($email, FILTER_VALIDATE_EMAIL)){
@@ -49,16 +49,20 @@
                     echo "<div class='alert alert-danger'>$error</div>";
                 }
             }else{
-                require_once "database.php";
-                $sql = "INSERT INTO users(full_name,username,email,phone_number,password) VALUES ($fullname, $username, $email,$phone_number,$pword)";
+                include("database.php");
+                $sql = "INSERT INTO `users`(`id`, `full_name`, `username`, `email`, `phone_number`, `password`) VALUES ('','$fullname','$username','$email','$phone_number','$password')";
+
+                if($conn -> query($sql)){
+                    echo "Records inserted successfully";
+                }
+                /*
                 $stmt = mysqli_stmt_init($conn);
                 $prepareStmt = mysqli_stmt_prepare($stmt,$sql);
                 if($prepareStmt){
                     mysqli_stmt_bind_param($stmt,"sssss",$fullname,$username,$email,$phone_number,$passwordHash);
                     mysqli_stmt_execute($stmt);
-                    echo "<div class='alert alert-success'>You Have Registered successfully!</div>";
-                
-                }else {
+                    echo "<div class='alert alert-success'>You Have Registered successfully!</div>";*/
+                else {
                     die("Something went wrong");
                 }
 
