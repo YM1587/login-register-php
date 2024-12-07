@@ -1,12 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
+    <?php
+        session_start();
+    ?>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
     <title>Weather App</title>
 </head>
-<body>
+<body style="background: #222;">
+
+
+    <div class="container">
+
+        <div class="row justify-center">
+
+            <div class="col-md-7">
+
+            <h4 class="text-light mt-4">Hello <?php echo $_SESSION['username']?>!! </h4>
     
     <div class="card">
         <div class="search">
@@ -37,11 +52,19 @@
                         <p>Wind Speed</p>
                     </div>
             
-                </div>
-                
+                </div>                
             </div>
         </div>
     </div>
+    </div>
+    <div class="col-md-3">
+    <div class="logout">
+        <button class="btn btn-danger mt-3"><a href='logout.php'><i id="icons" class="bi bi-box-arrow-left"></i>&nbsp; Logout</a></button>
+    </div>
+    </div>
+    </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>
     <script>
 
         const apiKey= "fdb0e4ff3f67c4f0ddcc76de688e45f5";

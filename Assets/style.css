@@ -13,9 +13,10 @@ body{
     background: linear-gradient(135deg,#00feba,#5b548a);
     color: #fff;
     margin: 100px auto 0;
-    border-radius:20px;
+    border-radius:29px;
     padding: 40px 35px;
     text-align: center;
+    border: none;
 }
 .search{
     width: 100%;
@@ -96,4 +97,41 @@ body{
     margin-top: 10px;
     display: none;
 
+}/*
+.logout button{
+    border: 0;
+    outline: 0;
+    background: #ebfffc;
+    color: #555;
+    padding: 10px 25px;
+    height: 60px;
+    border-radius: 30px;
+    flex: 1;
+    margin-right: 16px;
+    font-size: 18px;
+    right: 20px;
+    transform: translateY(-50%);
+}*/
+.logout button a{
+    text-decoration: none;
+    color: #555;
 }
+.text-light{
+    background: linear-gradient(135deg, #00feba, #54588a);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;    
+}
+.logout .btn{
+    padding: 10px 15px;
+  border-radius: 40px;
+  border: none;
+  background: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  width: 130px;
+  font-size: 18px;
+}
+
+  
