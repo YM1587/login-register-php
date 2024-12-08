@@ -21,7 +21,7 @@
 
             <div class="col-md-7">
 
-            <h4 class="text-light mt-4">Hello <?php echo $_SESSION['username']?>!! </h4>
+            <h4 class="text-light mt-4">Let's Forecast <?php echo $_SESSION['username']?>!!which city are we going with? </h4>
     
     <div class="card">
         <div class="search">
@@ -60,6 +60,7 @@
     <div class="col-md-3">
     <div class="logout">
         <button class="btn btn-danger mt-3"><a href='logout.php'><i id="icons" class="bi bi-box-arrow-left"></i>&nbsp; Logout</a></button>
+
     </div>
     </div>
     </div>
