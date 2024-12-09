@@ -73,7 +73,7 @@
 
     
         ?>
-        <form action="index.php" method="post">
+        <form action="" method="post">
             <h1>Registration</h1>
 
             <div class="input-box">
