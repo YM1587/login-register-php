@@ -18,6 +18,7 @@
         // if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         // var_dump($_POST); // Debugging statement to see form data
         // }
+        include('database.php');
         if(isset($_POST["submit"])){
             // echo "Form submitted!"; // Debugging purpose
             
@@ -27,6 +28,9 @@
             $phone_number = $_POST["phone_number"];
             $pword = md5($_POST["password"]);
             $confirm_password = md5($_POST["confirm_password"]);
+
+            $_SESSION['username'] = $username;
+
 
             $passwordHash = password_hash($pword, PASSWORD_DEFAULT);
             $errors = array();
@@ -54,7 +58,7 @@
 
                 if($conn -> query($sql)){
                     echo "You have registered successfully!";
-                    header('Location: ./Assets/welcome.php');
+                    header('Location: ../Assets/welcome.php');
                 }
                 /*
                 $stmt = mysqli_stmt_init($conn);
@@ -73,7 +77,7 @@
 
     
         ?>
-        <form action="" method="post">
+        <form action="registration.php" method="post">
             <h1>Registration</h1>
 
             <div class="input-box">

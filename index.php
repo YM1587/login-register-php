@@ -13,7 +13,7 @@
 
     <?php
     
-include('database.php'); // Ensure this file sets up a proper $conn connection using `mysqli`
+include('./Include/database.php'); // Ensure this file sets up a proper $conn connection using `mysqli`
 
 if (isset($_POST['login'])) {
     $username = $_POST['username'];
@@ -57,7 +57,7 @@ if (isset($_POST['login'])) {
 
 
     <div class="wrapper">
-        <form action="" method="post">
+        <form action="index.php" method="post">
             <h1>Login</h1>
             <div class="input-box">
                 <input type="text" placeholder="Username" name="username" required>
@@ -80,7 +80,7 @@ if (isset($_POST['login'])) {
             <button type="submit" name="login" class="btn">Login</button>
             <div class="register-link">
                 <p>Don't have an account?
-                    <a href="#" >Register</a>
+                    <a href="./Include/registration.php" >Register</a>
                 </p>
             </div>
 
